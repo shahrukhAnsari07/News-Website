@@ -1,0 +1,760 @@
+/* =========================================
+   NEWS TECH - GAMING NEWS WEBSITE
+   COMPLETE APP.CSS
+========================================= */
+
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  background: #050816;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+
+/* =========================================
+   ANIMATED GAMING BACKGROUND
+========================================= */
+
+body {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(0, 255, 200, 0.18),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(120, 0, 255, 0.22),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(0, 120, 255, 0.12),
+      transparent 35%
+    ),
+    linear-gradient(
+      120deg,
+      #03050f,
+      #080b20,
+      #050816,
+      #10051f,
+      #03050f
+    );
+
+  background-size: 200% 200%;
+
+  animation: gamingBackground 14s ease-in-out infinite;
+}
+
+@keyframes gamingBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  25% {
+    background-position: 50% 100%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  75% {
+    background-position: 50% 0%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/* =========================================
+   MOVING GAMING GRID
+========================================= */
+
+body::before {
+  content: "";
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-image:
+    linear-gradient(
+      rgba(0, 255, 200, 0.06) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 255, 200, 0.06) 1px,
+      transparent 1px
+    );
+
+  background-size: 50px 50px;
+
+  animation: gridMove 8s linear infinite;
+
+  pointer-events: none;
+
+  z-index: -2;
+}
+
+@keyframes gridMove {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(50px);
+  }
+}
+
+
+/* =========================================
+   GLOWING BACKGROUND EFFECT
+========================================= */
+
+body::after {
+  content: "";
+
+  position: fixed;
+
+  width: 450px;
+  height: 450px;
+
+  top: 15%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 200, 0.08),
+    transparent 70%
+  );
+
+  filter: blur(30px);
+
+  animation: glowMove 7s ease-in-out infinite alternate;
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+@keyframes glowMove {
+  0% {
+    transform: translateX(-60%) translateY(-20px);
+  }
+
+  100% {
+    transform: translateX(-40%) translateY(80px);
+  }
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 100;
+
+  height: 72px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 60px;
+
+  background: rgba(3, 7, 20, 0.88);
+
+  border-bottom: 1px solid rgba(0, 255, 200, 0.25);
+
+  backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 0 20px rgba(0, 255, 200, 0.08);
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+  font-size: 28px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  color: #00ffc8;
+
+  text-shadow:
+    0 0 8px rgba(0, 255, 200, 0.6),
+    0 0 20px rgba(0, 255, 200, 0.3);
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+
+  text-shadow:
+    0 0 10px #00ffc8,
+    0 0 30px rgba(0, 255, 200, 0.7);
+}
+
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
+
+.nav-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 32px;
+}
+
+.nav-links a {
+  position: relative;
+
+  color: #dce5ff;
+
+  text-decoration: none;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -8px;
+
+  width: 0;
+  height: 2px;
+
+  background: #00ffc8;
+
+  box-shadow:
+    0 0 8px #00ffc8;
+
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00ffc8;
+
+  text-shadow:
+    0 0 10px rgba(0, 255, 200, 0.7);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+
+/* =========================================
+   MAIN SECTION
+========================================= */
+
+.main-section {
+  position: relative;
+
+  max-width: 1250px;
+
+  margin: auto;
+
+  padding: 65px 25px 70px;
+}
+
+
+/* =========================================
+   MAIN TITLE
+========================================= */
+
+.main-section h1 {
+  text-align: center;
+
+  margin-bottom: 45px;
+
+  font-size: 42px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 0 10px rgba(0, 255, 200, 0.4),
+    0 0 30px rgba(120, 0, 255, 0.3);
+
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  from {
+    text-shadow:
+      0 0 8px rgba(0, 255, 200, 0.3);
+  }
+
+  to {
+    text-shadow:
+      0 0 15px rgba(0, 255, 200, 0.7),
+      0 0 35px rgba(120, 0, 255, 0.4);
+  }
+}
+
+
+/* =========================================
+   NEWS GRID
+========================================= */
+
+.news-container {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 28px;
+}
+
+
+/* =========================================
+   NEWS CARD
+========================================= */
+
+.news-card {
+  position: relative;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 23, 50, 0.95),
+      rgba(7, 11, 30, 0.92)
+    );
+
+  border: 1px solid rgba(0, 255, 200, 0.18);
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.35),
+    0 0 15px rgba(0, 255, 200, 0.05);
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+
+  animation: cardAppear 0.7s ease both;
+}
+
+
+/* Card top glowing line */
+
+.news-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 100%;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #00ffc8,
+    #7c3cff,
+    transparent
+  );
+
+  transition: left 0.6s ease;
+
+  z-index: 2;
+}
+
+.news-card:hover::before {
+  left: 100%;
+}
+
+
+/* Card hover */
+
+.news-card:hover {
+  transform: translateY(-10px) scale(1.015);
+
+  border-color: rgba(0, 255, 200, 0.65);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.45),
+    0 0 20px rgba(0, 255, 200, 0.18),
+    0 0 45px rgba(100, 0, 255, 0.12);
+}
+
+
+/* =========================================
+   CARD IMAGE
+========================================= */
+
+.news-card img {
+  display: block;
+
+  width: 100%;
+
+  height: 210px;
+
+  object-fit: cover;
+
+  filter: brightness(0.8) saturate(1.15);
+
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+.news-card:hover img {
+  transform: scale(1.07);
+
+  filter:
+    brightness(0.95)
+    saturate(1.3);
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.card-content {
+  padding: 22px;
+}
+
+
+/* =========================================
+   CATEGORY
+========================================= */
+
+.category {
+  display: inline-block;
+
+  color: #00ffc8;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+
+  padding: 5px 10px;
+
+  border: 1px solid rgba(0, 255, 200, 0.25);
+
+  border-radius: 4px;
+
+  background: rgba(0, 255, 200, 0.06);
+
+  box-shadow:
+    0 0 10px rgba(0, 255, 200, 0.04);
+}
+
+
+/* =========================================
+   CARD TITLE
+========================================= */
+
+.card-content h2 {
+  color: #ffffff;
+
+  font-size: 21px;
+
+  line-height: 1.35;
+
+  margin: 13px 0 10px;
+
+  text-shadow:
+    0 0 8px rgba(0, 255, 200, 0.15);
+
+  transition: color 0.3s ease;
+}
+
+.news-card:hover .card-content h2 {
+  color: #00ffc8;
+}
+
+
+/* =========================================
+   CARD DESCRIPTION
+========================================= */
+
+.card-content p {
+  color: #aeb9d4;
+
+  font-size: 14px;
+
+  line-height: 1.65;
+
+  margin-bottom: 20px;
+}
+
+
+/* =========================================
+   READ MORE BUTTON
+========================================= */
+
+.card-content button {
+  position: relative;
+
+  border: 1px solid #00ffc8;
+
+  background: transparent;
+
+  color: #00ffc8;
+
+  padding: 10px 18px;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  overflow: hidden;
+
+  transition:
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.card-content button:hover {
+  background: #00ffc8;
+
+  color: #03050f;
+
+  box-shadow:
+    0 0 10px #00ffc8,
+    0 0 25px rgba(0, 255, 200, 0.45);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+  position: relative;
+
+  background: rgba(3, 7, 20, 0.9);
+
+  color: #8f9bb8;
+
+  text-align: center;
+
+  padding: 28px 20px;
+
+  margin-top: 20px;
+
+  border-top: 1px solid rgba(0, 255, 200, 0.2);
+
+  box-shadow:
+    0 -5px 25px rgba(0, 0, 0, 0.2);
+
+  backdrop-filter: blur(10px);
+}
+
+.footer p {
+  font-size: 14px;
+
+  letter-spacing: 0.5px;
+}
+
+.footer p::first-letter {
+  color: #00ffc8;
+}
+
+
+/* =========================================
+   CARD ANIMATION
+========================================= */
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #03050f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    #00ffc8,
+    #7c3cff
+  );
+
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00ffc8;
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+  .navbar {
+    padding: 0 30px;
+  }
+
+  .news-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .main-section h1 {
+    font-size: 36px;
+  }
+}
+
+
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  .navbar {
+    height: auto;
+
+    min-height: 65px;
+
+    padding: 15px 20px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .main-section {
+    padding: 45px 16px 55px;
+  }
+
+  .main-section h1 {
+    font-size: 28px;
+
+    margin-bottom: 30px;
+
+    letter-spacing: 1px;
+  }
+
+  .news-container {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+  .news-card img {
+    height: 220px;
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+}
+
+
+/* =========================================
+   REDUCE ANIMATION FOR ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    scroll-behavior: auto !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}
